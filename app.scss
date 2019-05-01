@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+// @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font: 14px/1.5 'Open Sans',sans-serif;
+  color: #345;
+  background: #386298;
+  margin-top: 40px;
+  min-width: 300px;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  min-width: 300px;
+  display: flex;
+}
+
+.editor, .preview {
+  display: none;
+  padding: 20px 15px;
+  width: 100vw;
+  font-size : 1rem; 
+  background-color: #fbfbfb;
+  border: none;
+  resize: none;
+  outline: none;
+  min-width: 300px;
+  height: calc(100vh - 83px);
+  overflow: scroll;
+  border-top: 10px solid white;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #abc;
+  border: 1px solid transparent;
+  border-radius: 5px 5px 0 0;
+}
+
+label:nth-child(2) {
+  margin-left: 11px;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before { content: '\f040'; }
+label[for*='2']:before { content: '\f06e'; }
+label[for*='3']:before { content: '\f0db'; }
+
+label:hover {
+  color: #789;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #0af;
+  background: white;
+}
+
+#tab1:checked ~ div .editor,
+#tab2:checked ~ div .preview {
+  display: block;
+}
+
+#tab3:checked ~ div .editor,
+#tab3:checked ~ div .preview {
+  display: inline-block;
+  width: 50%;
+}
+
+#tab3:checked ~ .editor {
+  float: left;
+}
+
+#tab3:checked ~ .preview {
+  float: right;
+}
+
+label[for*='3'] {
+  display: none;
+}
+
+a, a:visited {
+  color: #0080ff;
+  text-decoration: none;
+  outline: 0;
+  transition: color 300ms;
+}
+a:hover, a:active {
+  outline: 0;
+  color: #24292e;
+}
+
+h1, h2, h3, p, pre,
+ul, blockquote, table {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3 {
+  padding: .5rem 0;
+  border-bottom: 1px solid #ccc; 
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+code {
+  color:  #24292e;
+  background: #ddeeff;
+  padding: .3rem;
+}
+
+pre {
+  background: #ddeeff;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+pre code {
+  background: transparent; 
+}
+
+blockquote {
+  border-left: 1px solid #8dc0f3;
+  padding: 1rem 0 .1rem 1rem; 
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: .5rem;
+  text-align : left;
+}
+
+th {
+  border-bottom: 1px solid #8dc0f3;
+}
+
+li {
+  line-height: 1.6rem;
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-bottom: .5rem;
+}
+
+ul > li > ul > li {
+  list-style-type: circle;
+}
+
+ul > li > ul > li > ul > li {
+  list-style-type: square;
+}
+
+ul > li > ul > li > ul > li > ul > li {
+  list-style-type: circle;
+}
+
+ol > li {
+  list-style-type: decimal;
+}
+
+@media screen and (min-width: 800px) {
+  label[for*='3'] {
+    display: inline-block;
+  }
+}
